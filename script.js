@@ -7,11 +7,18 @@ function noticeButton() {
   button.addEventListener('click', () => {
     const fill = document.querySelector('#notice-fill')
     if (fill) {
+      // play sound
       const buttonSound = new Audio('./fallout-sound/pip-boy-tab-change.mp3')
       buttonSound.play()
+      // blur
+      document.querySelector('#notice').classList.add('blur')
+      document.querySelector('#container').classList.add('blur')
+
       // wait for a little bit before closing fill div for the 'old tech feel'
       setTimeout(() => {
         fill.classList.add('hidden')
+        document.querySelector('#notice').classList.remove('blur')
+        document.querySelector('#container').classList.remove('blur')
       }, 700);
     }
   })

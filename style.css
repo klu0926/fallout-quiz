@@ -195,6 +195,10 @@ footer {
   display: none;
 }
 
+.blur {
+  filter: blur(1px);
+}
+
 @keyframes question-div-border-top {
   0% {
     top: -5px;

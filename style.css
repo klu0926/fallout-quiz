@@ -3,6 +3,7 @@
   --background-color-hl: rgb(1, 45, 1);
   --notice-background-color: rgb(1, 22, 1);
   --text-color: green;
+  --text-color-hl: rgb(3, 193, 3);
 }
 
 * {
@@ -70,6 +71,7 @@ p {
 .question-div:hover {
   background-color: var(--background-color-hl);
   box-shadow: var(--background-color-hl) 0 0 40px 10px;
+  animation: question-hover 0.2s linear forwards;
 }
 
 .question-div::before {
@@ -108,6 +110,10 @@ p {
   border: 1.5px solid var(--text-color);
   border-top: none;
   animation: question-div-border-bottom 0.4s linear forwards;
+}
+
+.question-div:hover h2 {
+  color: var(--text-color-hl);
 }
 
 label {
@@ -226,5 +232,18 @@ footer {
   100% {
     bottom: 0px;
     opacity: 100%;
+  }
+}
+
+@keyframes question-hover {
+  0% {
+    filter: blur(1.5px);
+  }
+  99% {
+    filter: blur(1.5px);
+  }
+  100% {
+    filter: blur(0px);
+    color: var(--text-color-hl);
   }
 }
